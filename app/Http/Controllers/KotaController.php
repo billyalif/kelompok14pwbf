@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class KotaController extends Controller
 {
-    public function kota() {
+    public function index() {
         $kota = Kota::all();
     }
 }
