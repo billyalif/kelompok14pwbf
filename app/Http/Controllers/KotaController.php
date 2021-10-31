@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Kota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KotaController extends Controller
 {
     public function index() {
-        $kota = Kota::all();
+        $a = Kota::all();
+        return view('order', ['a'=>$a]);
     }
 }

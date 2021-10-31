@@ -24,11 +24,7 @@ Route::get('/data', function () {
     ]);
 });
 
-Route::get('/order', function () {
-    return view('order',[
-        "title"=>"Order"
-    ]);
-});
+Route::get('/order', 'App\Http\Controllers\KotaController@index');
 
 Route::get('/penerimaan', function () {
     return view('terima', [
