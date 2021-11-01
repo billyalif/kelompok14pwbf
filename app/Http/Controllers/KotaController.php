@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class KotaController extends Controller
 {
     public function index() {
-        $a = Kota::all();
-        return view('order', ['a'=>$a]);
+        $kota = Kota::all();
+        return view('tabel-ga-penting.tabel-kota', ['kota'=>$kota]);
     }
 }

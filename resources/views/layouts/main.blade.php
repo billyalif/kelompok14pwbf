@@ -19,9 +19,9 @@
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/login">Login</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/order">Order</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Penerimaan</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Pembayaran</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/penerimaan">Penerimaan</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/pembayaran">Pembayaran</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/tables">Tabel Lain</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
                 </div>
             </div>

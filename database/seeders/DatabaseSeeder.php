@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Kota::factory(20)->create();
+        Kota::factory(200)->create();
 
     }
 }

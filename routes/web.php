@@ -24,7 +24,11 @@ Route::get('/data', function () {
     ]);
 });
 
-Route::get('/order', 'App\Http\Controllers\KotaController@index');
+Route::get('/order', function(){
+    return view('order',[
+        "title" => "Order"
+    ]);
+});
 
 Route::get('/penerimaan', function () {
     return view('terima', [
@@ -50,10 +54,22 @@ Route::get('/navbar', function () {
     ]);
 });
 
+Route::get('/', function () {
+    return view('home',[
+        "title"=>"Welcome"
+    ]);
+});
+
 Route::get('/home', function () {
     return view('home',[
         "title"=>"Welcome"
     ]);
 });
 
+Route::get('/tables', function () {
+    return view('tabel',[
+        "title"=>"Tabel"
+    ]);
+});
 
+Route::get('/tabel-kota', '\App\Http\Controllers\KotaController@index');
