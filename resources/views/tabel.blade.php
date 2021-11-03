@@ -1,6 +1,7 @@
 <link href="css/styles.css" rel="stylesheet" />
 @extends('home')
 @section("container-fluid")
+<h1>Daftar Tabel</h1>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>
           <th>Tabel</th>

@@ -24,11 +24,7 @@ Route::get('/data', function () {
     ]);
 });
 
-Route::get('/order', function(){
-    return view('order',[
-        "title" => "Order"
-    ]);
-});
+
 
 Route::get('/penerimaan', function () {
     return view('terima', [
@@ -73,3 +69,10 @@ Route::get('/tables', function () {
 });
 
 Route::get('/tabel-kota', '\App\Http\Controllers\KotaController@index');
+Route::get('/insert-jenis-barang', 'App\Http\Controllers\JenisBarangController@insert');
+Route::post('/create-jenis-barang','App\Http\Controllers\JenisBarangController@create');
+
+
+Route::post('/create-barang','App\Http\Controllers\BarangController@create');
+Route::get ('/order','App\Http\Controllers\BarangController@index');
+Route::get ('/insert-order','App\Http\Controllers\BarangController@insert');
