@@ -11,10 +11,12 @@ class TabelUser extends Model
 
     protected $fillable = [
         'nama_user',
-        'alamat_user',
-        'notelp_user',
+        'email',
+        'telp_user',
         'username_user',
-        'password_user'
+        'password_user',
+        'id_kota',
+        'id_role'
     ];
 
     public function Pemesanans()

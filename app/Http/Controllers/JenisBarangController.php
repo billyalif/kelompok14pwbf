@@ -9,11 +9,11 @@ class JenisBarangController extends Controller
 {
     public function index(){
         $a = jenisBarang::all();
-        return view('jenis-barang', ['a'=>$a]);
+        return view('pegawai.jenis-barang', ['a'=>$a]);
     }
 
     public function insert(){
-        return view('insert-jenis-barang');
+        return view('pegawai.insert-jenis-barang');
     }
 
     public function create(Request $request)
