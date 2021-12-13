@@ -41,7 +41,7 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
 
-        return view('edit',[
+        return view('pemilik.role-edit',[
             'title' => 'Edit Role',
             'role' => $role
         ]);
