@@ -133,4 +133,13 @@ Route::get ('/barang','App\Http\Controllers\BarangController@index');
 Route::get ('/insert-barang','App\Http\Controllers\BarangController@insert');
 Route::get('/edit-barang','App\Http\Controllers\BarangController@edit');
 Route::post('/update-barang/{id}','App\Http\Controllers\BarangController@update');
+Route::get('/barang-destroy/{id}', [BarangController::class,'destroy']);
+
+Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/pemesanan-create', [PemesananController::class, 'create']);
+Route::post('/pemesanan-store', [PemesananController::class, 'store']);
+Route::get('/pemesanan-edit/{id}', [PemesananController::class,'edit']);
+Route::post('/pemesanan-update/{id}', [PemesananController::class,'update']);
+Route::get('/pemesanan-destroy/{id}', [PemesananController::class,'destroy']);
+Route::get('/detailpemesanan-index/{id}', [DetailPemesananController::class,'index']);
 

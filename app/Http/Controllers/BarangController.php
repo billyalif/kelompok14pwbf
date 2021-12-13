@@ -36,21 +36,33 @@ class BarangController extends Controller
 
     public function edit(Request $request){
         $a = jenisBarang::all();
-        return view('pegawai.edit-barang', ['a'=>$a],['request'=>$request]);
+        $z = '[]';
+        return view('pegawai.edit-barang', [
+            'title' => 'Edit Data Barang',
+            'a'=>$a,
+            'request'=>$request]);
     }
 
     public function update(Request $request,$id){
         $item = Barang::find($id);
 
-        $item->nama_barang           = $request->input('nama_barang');
-        $item->stock_barang          = $request->input('strok_barang');
-        $item->harga_beli_barang     = $request->input('harga_beli_barang');
-        $item->harga_jual_barang     = $request->input('harga_jual_barang');
-        $item->id_jb                 = $request->input('id_jb');
+        $item->nama_barang         = $request->input('nama_barang');
+        $item->strok_barang     = $request->input('strok_barang');
+        $item->harga_beli_barang   = $request->input('harga_beli_barang');
+        $item->harga_jual_barang   = $request->input('harga_jual_barang');
+        $item->id_jb            = $request->input('id_jb');
         $item->save();
 
-        return redirect('pegawai.barang');
+        return redirect('/barang');
     }
+
+    public function destroy($id)
+    {
+        Barang::destroy($id);
+
+        return redirect('/barang');
+    }
+
 
 }
 

@@ -41,8 +41,10 @@
                             </td>
                             @csrf
                             @method('Delete')
-                            <td>
-                                <a><button type="submit" class="btn btn-danger btn-sm" onclick=>Delete</button></a>
+                            <td class="text-wrap">
+                                <a href="/barang-destroy/{{ $item->id }}" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ?')">
+                                    Delete
+                                </a>
                             </td>
                         </tr>
                     @endforeach

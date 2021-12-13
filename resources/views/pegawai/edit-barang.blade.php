@@ -1,8 +1,10 @@
 @extends('layouts.main')
+
 @section('container-fluid')
+
 <div class="container-fluid px-4">
 	<h1 class="mt-2 mb-4">Edit Barang</h1>
-	<form action = "{{ url('/update-barang/{id}',$request->id) }}" method = "post">
+	<form action = "{{ url('/update-barang',$request->id) }}" method = "post">
 		@csrf
 			<div class="content">
 				<div class="row mb-3">
@@ -43,6 +45,7 @@
 				</div>
 			</div>
 
-			<input type = 'submit' class="btn btn-primary" value = "Input Data"/>
+			<input type = 'submit' class="btn btn-primary" value = "Simpan"/>
 	</form>
+</div>
 @endsection
