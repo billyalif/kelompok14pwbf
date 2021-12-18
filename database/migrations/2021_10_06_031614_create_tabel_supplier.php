@@ -20,11 +20,6 @@ class CreateTabelSupplier extends Migration
             $table->string('telp_sup', 13);
             $table->timestamps();
         });
-
-        Schema::table('tabel_user', function (Blueprint $table) {
-            $table->foreignId('kode_kota')->constrained('tabel_kota');
-        });
-        
     }
 
     /**
