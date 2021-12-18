@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,28 +29,30 @@
                     <div class="card-body p-5">
                         @if(session()->has('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
-                         {{ session('success') }}
-                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif
                         <!-- Sign Up form-->
                         <div class="text-center">
                             <h1 class="h3 text-gray-900 mt-2 mb-4">Please Sign Up</h1>
                         </div>
-                        <form class="tabel_user" action="/register" method="post">
+                        <form class="tabel_user" action="{{ route('register.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control form-control-user @error('name')is-invalid @enderror"
-                                id="name" placeholder="Name" required value="{{ old('name') }}">
-                                @error('name')
+                                <input type="text" name="nama"
+                                    class="form-control form-control-user @error('nama')is-invalid @enderror" id="nama"
+                                    placeholder="Nama" required value="{{ old('nama') }}">
+                                @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" name="alamat" class="form-control form-control-user @error('alamat')is-invalid @enderror"
-                                id="alamat" placeholder="Alamat" required value="{{ old('alamat') }}">
+                                <input type="text" name="alamat"
+                                    class="form-control form-control-user @error('alamat')is-invalid @enderror"
+                                    id="alamat" placeholder="Alamat" required value="{{ old('alamat') }}">
                                 @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -59,8 +60,12 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" name="id_kota" class="form-control form-control-user @error('id_kota')is-invalid @enderror"
-                                id="id_kota" placeholder="ID Kota" required value="{{ old('id_kota') }}">
+                                <select class="form-control form-control-user @error('id_kota')is-invalid @enderror" name="id_kota" id="id_kota" aria-label=".form-select-default" required>
+                                    <option value="">--Pilih Kota--</option>
+                                    @foreach($cities as $city)
+                                    <option value="{{ $city->id }}">{{ $city->nama_kota }}</option>
+                                    @endforeach
+                                </select>
                                 @error('id_kota')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -68,8 +73,12 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" name="id_role" class="form-control form-control-user @error('id_role')is-invalid @enderror"
-                                id="id_role" placeholder="ID Role" required value="{{ old('id_role') }}">
+                                <select class="form-control form-control-user @error('id_role')is-invalid @enderror" name="id_role" id="id_role" aria-label=".form-select-default" required>
+                                    <option value="">--Pilih Role--</option>
+                                    @foreach($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->jenis_role }}</option>
+                                    @endforeach
+                                </select>
                                 @error('id_role')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -77,8 +86,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" name="telp" class="form-control form-control-user @error('telp')is-invalid @enderror"
-                                id="telp" placeholder="Telepon" required value="{{ old('telp') }}">
+                                <input type="text" name="telp"
+                                    class="form-control form-control-user @error('telp')is-invalid @enderror" id="telp"
+                                    placeholder="Telepon" required value="{{ old('telp') }}">
                                 @error('telp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -86,8 +96,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control form-control-user @error('email')is-invalid @enderror"
-                                id ="email" placeholder="Email" required value="{{ old('email') }}">
+                                <input type="email" name="email"
+                                    class="form-control form-control-user @error('email')is-invalid @enderror"
+                                    id="email" placeholder="Email" required value="{{ old('email') }}">
                                 @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -95,8 +106,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="username" name="username" class="form-control form-control-user @error('username')is-invalid @enderror"
-                                id="username" placeholder="Username" required value="{{ old('username') }}">
+                                <input type="username" name="username"
+                                    class="form-control form-control-user @error('username')is-invalid @enderror"
+                                    id="username" placeholder="Username" required value="{{ old('username') }}">
                                 @error('username')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -104,8 +116,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control form-control-user @error('password')is-invalid @enderror"
-                                id="password" placeholder="Password" required>
+                                <input type="password" name="password"
+                                    class="form-control form-control-user @error('password')is-invalid @enderror"
+                                    id="password" placeholder="Password" required>
                                 @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -113,7 +126,7 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-0">
-                                <button class="btn btn-primary btn-user btn-block"  type="submit">Sign Up</button>
+                                <button class="btn btn-primary btn-user btn-block" type="submit">Sign Up</button>
                             </div>
                         </form>
                     </div>
@@ -145,6 +158,6 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/demo/chart-bar-demo.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
-
 </body>
+
 </html>
