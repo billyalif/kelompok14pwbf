@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 
 class TabelUserController extends Controller
 {
-    public function index(){
-        $user = TabelUser::with(['Role','Kota'])->get();
+    public function index()
+    {
+        $user = TabelUser::with(['Role', 'Kota'])->get();
 
         return view('pemilik.user-index', [
             'title' => 'User',
@@ -53,7 +54,7 @@ class TabelUserController extends Controller
         $kota = Kota::all();
         $user = TabelUser::find($id);
 
-        return view('user-edit',[
+        return view('user-edit', [
             'title' => 'Edit Data User',
             'user' => $user,
             'role' => $role,
